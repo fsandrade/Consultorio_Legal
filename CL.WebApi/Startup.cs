@@ -1,11 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using CL.Data.Context;
 using CL.Data.Repository;
 using CL.Manager.Implementation;
 using CL.Manager.Interfaces;
+using CL.Manager.Mappings;
+using CL.Manager.Validator;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +35,15 @@ namespace CL.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddFluentValidation(p =>
+                {
+                    p.RegisterValidatorsFromAssemblyContaining<NovoClienteValidator>();
+                    p.RegisterValidatorsFromAssemblyContaining<AlteraClienteValidator>();
+                    p.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
+                });
+
+            services.AddAutoMapper(typeof(NovoClienteMappingProfile), typeof(AlteraClienteMappingProfile));
 
             services.AddDbContext<ClContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ClConnection")));
 
