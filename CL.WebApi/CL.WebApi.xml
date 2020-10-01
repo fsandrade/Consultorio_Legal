@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CL.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CL.WebApi.Controllers.ClientesController.Get">
+            <summary>
+            Retorna todos clientes cadastrados na base.
+            </summary>
+        </member>
+        <member name="M:CL.WebApi.Controllers.ClientesController.Get(System.Int32)">
+            <summary>
+            Retorna um cliente consultado pelo id.
+            </summary>
+            <param name="id" example="123">Id do cliente.</param>
+        </member>
+        <member name="M:CL.WebApi.Controllers.ClientesController.Post(CL.Core.Shared.ModelViews.NovoCliente)">
+            <summary>
+            Insere um novo cliente
+            </summary>
+            <param name="novoCliente"></param>
+        </member>
+        <member name="M:CL.WebApi.Controllers.ClientesController.Put(CL.Core.Shared.ModelViews.AlteraCliente)">
+            <summary>
+            Altera um cliente.
+            </summary>
+            <param name="alteraCliente"></param>
+        </member>
+        <member name="M:CL.WebApi.Controllers.ClientesController.Delete(System.Int32)">
+            <summary>
+            Exclui um cliente.
+            </summary>
+            <param name="id" example="123">Id do cliente</param>
+            <remarks>Ao excluir um cliente o mesmo será removido permanentemente da base.</remarks>
+        </member>
+    </members>
+</doc>

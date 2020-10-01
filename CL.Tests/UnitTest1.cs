@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace CL.Tests
@@ -8,7 +7,6 @@ namespace CL.Tests
         [Fact]
         public void Test1()
         {
-
         }
     }
 }

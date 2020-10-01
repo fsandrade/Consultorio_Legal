@@ -2,7 +2,6 @@
 using CL.Core.Domain;
 using CL.Core.Shared.ModelViews;
 using CL.Manager.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
