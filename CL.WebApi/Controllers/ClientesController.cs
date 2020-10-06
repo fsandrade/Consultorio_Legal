@@ -3,6 +3,9 @@ using CL.Core.Shared.ModelViews;
 using CL.Manager.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using SerilogTimings;
+using System;
 using System.Threading.Tasks;
 
 namespace CL.WebApi.Controllers
@@ -12,10 +15,12 @@ namespace CL.WebApi.Controllers
     public class ClientesController : ControllerBase
     {
         private readonly IClienteManager clienteManager;
+        private readonly ILogger<ClientesController> logger;
 
-        public ClientesController(IClienteManager clienteManager)
+        public ClientesController(IClienteManager clienteManager, ILogger<ClientesController> logger)
         {
             this.clienteManager = clienteManager;
+            this.logger = logger;
         }
 
         /// <summary>
@@ -26,6 +31,7 @@ namespace CL.WebApi.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
         {
+            throw new Exception("Erro de teste");
             return Ok(await clienteManager.GetClientesAsync());
         }
 
@@ -51,8 +57,16 @@ namespace CL.WebApi.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(NovoCliente novoCliente)
         {
-            var clienteInserido = await clienteManager.InsertClienteAsync(novoCliente);
+            logger.LogInformation("Objeto recebido {@novoCliente}", novoCliente);
+
+            Cliente clienteInserido;
+            using (Operation.Time("Tempo de adição de um novo cliente."))
+            {
+                logger.LogInformation("Foi requisitada a inserção de um novo cliente.");
+                clienteInserido = await clienteManager.InsertClienteAsync(novoCliente);
+            }
             return CreatedAtAction(nameof(Get), new { id = clienteInserido.Id }, clienteInserido);
+            logger.LogInformation("Fim da requisição.");
         }
 
         /// <summary>
