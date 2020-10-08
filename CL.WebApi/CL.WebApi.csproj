@@ -43,5 +43,14 @@
     <ProjectReference Include="..\CL.Data\CL.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="CL.Core.Shared.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="CL.WebApi.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 
 </Project>
