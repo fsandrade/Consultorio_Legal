@@ -27,12 +27,6 @@
             </summary>
             <example>M</example>
         </member>
-        <member name="P:CL.Core.Shared.ModelViews.NovoCliente.Telefone">
-            <summary>
-            Telefone do cliente
-            </summary>
-            <example>79999887744</example>
-        </member>
         <member name="P:CL.Core.Shared.ModelViews.NovoCliente.Documento">
             <summary>
             Documento do cliente: CNH, CPF, RG
@@ -56,6 +50,12 @@
         </member>
         <member name="P:CL.Core.Shared.ModelViews.NovoEndereco.Complemento">
             <example>Ao lado do posto</example>
+        </member>
+        <member name="P:CL.Core.Shared.ModelViews.NovoTelefone.Numero">
+            <summary>
+            Telefone do cliente
+            </summary>
+            <example>79999887744</example>
         </member>
     </members>
 </doc>

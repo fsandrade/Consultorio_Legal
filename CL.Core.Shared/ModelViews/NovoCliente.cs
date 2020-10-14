@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CL.Core.Shared.ModelViews
 {
@@ -26,17 +27,13 @@ namespace CL.Core.Shared.ModelViews
         public char Sexo { get; set; }
 
         /// <summary>
-        /// Telefone do cliente
-        /// </summary>
-        /// <example>79999887744</example>
-        public string Telefone { get; set; }
-
-        /// <summary>
         /// Documento do cliente: CNH, CPF, RG
         /// </summary>
         /// <example>12341231312</example>
         public string Documento { get; set; }
 
         public NovoEndereco Endereco { get; set; }
+
+        public ICollection<NovoTelefone> Telefones { get; set; }
     }
 }

@@ -20,6 +20,7 @@ namespace CL.Data.Repository
         {
             return await context.Clientes
                 .Include(p => p.Endereco)
+                .Include(p => p.Telefones)
                 .AsNoTracking().ToListAsync();
         }
 
@@ -27,6 +28,7 @@ namespace CL.Data.Repository
         {
             return await context.Clientes
                 .Include(p => p.Endereco)
+                .Include(p => p.Telefones)
                 .SingleOrDefaultAsync(p => p.Id == id);
         }
 

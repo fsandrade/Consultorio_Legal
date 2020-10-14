@@ -20,6 +20,8 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [12 - Gerenciamento de erros](https://youtu.be/9YIgWqXZQlQ) |
 | [13 - EF Core - Fluent API](https://youtu.be/bLGSPrCixvc) |
 | [14 - EF Core - Relacionamento Um para UM](https://youtu.be/gLICibYuo1U) |
+| [15 - EF Core - Relacionamento Um para Muitos](https://youtu.be/OZVtSO8k9sA) |
+
 
 ### Como visualizar o conteudo por aula
 A cada aula postada no [Youtube](https://www.youtube.com/playlist?list=PLbq2QKd5ieAt0H551D_0E4bGIYRxbq5HL) é feito um commit aqui no repositório com o código refeente a mesma. Desta forma, caso você queira ver o código no mesmo ponto em que está na video aula, basta regredir até o commit da aula em questão. 
