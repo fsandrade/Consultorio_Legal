@@ -18,12 +18,16 @@ namespace CL.Data.Repository
 
         public async Task<IEnumerable<Cliente>> GetClientesAsync()
         {
-            return await context.Clientes.AsNoTracking().ToListAsync();
+            return await context.Clientes
+                .Include(p => p.Endereco)
+                .AsNoTracking().ToListAsync();
         }
 
         public async Task<Cliente> GetClienteAsync(int id)
         {
-            return await context.Clientes.FindAsync(id);
+            return await context.Clientes
+                .Include(p => p.Endereco)
+                .SingleOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<Cliente> InsertClienteAsync(Cliente cliente)

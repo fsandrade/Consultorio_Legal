@@ -9,9 +9,14 @@
 	  <Compile Remove="Migrations\20201011211841_teste.Designer.cs" />
 	  <Compile Remove="Migrations\20201011213535_tamanho-nome.cs" />
 	  <Compile Remove="Migrations\20201011213535_tamanho-nome.Designer.cs" />
+	  <Compile Remove="Migrations\20201013231244_add-endereco.cs" />
+	  <Compile Remove="Migrations\20201013231244_add-endereco.Designer.cs" />
+	  <Compile Remove="Migrations\20201013231416_add-endereco.cs" />
+	  <Compile Remove="Migrations\20201013231416_add-endereco.Designer.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
 	</ItemGroup>

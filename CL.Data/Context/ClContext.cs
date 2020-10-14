@@ -7,6 +7,7 @@ namespace CL.Data.Context
     public class ClContext : DbContext
     {
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
 
         public ClContext(DbContextOptions options) : base(options)
         {
@@ -17,6 +18,7 @@ namespace CL.Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new ClienteConfiguration());
+            modelBuilder.ApplyConfiguration(new EnderecoConfiguration());
         }
     }
 }

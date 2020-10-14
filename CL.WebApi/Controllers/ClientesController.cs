@@ -31,7 +31,6 @@ namespace CL.WebApi.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
         {
-            throw new Exception("Erro de teste");
             return Ok(await clienteManager.GetClientesAsync());
         }
 

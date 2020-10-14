@@ -13,6 +13,7 @@ namespace CL.Manager.Validator
             RuleFor(x => x.Documento).NotNull().NotEmpty().MinimumLength(4).MaximumLength(14);
             RuleFor(x => x.Telefone).NotNull().NotEmpty().Matches("[1-9][0-9]{10}").WithMessage("O telefone tem que ter o formato [2-9][0-9]{10}");
             RuleFor(x => x.Sexo).NotNull().NotEmpty().Must(IsMorF).WithMessage("Sexo precisa ser M ou F");
+            RuleFor(x => x.Endereco).SetValidator(new NovoEnderecoValidator());
         }
 
         private bool IsMorF(char sexo)
