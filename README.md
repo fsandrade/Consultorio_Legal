@@ -24,4 +24,6 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 
 
 ### Como visualizar o conteudo por aula
-A cada aula postada no [Youtube](https://www.youtube.com/playlist?list=PLbq2QKd5ieAt0H551D_0E4bGIYRxbq5HL) é feito um commit aqui no repositório com o código refeente a mesma. Desta forma, caso você queira ver o código no mesmo ponto em que está na video aula, basta regredir até o commit da aula em questão. 
+A cada aula postada no [Youtube](https://www.youtube.com/playlist?list=PLbq2QKd5ieAt0H551D_0E4bGIYRxbq5HL) é feito um commit aqui no repositório com a TAG refeente a mesma. Desta forma, caso você queira ver o código no mesmo ponto em que está na video aula, basta regredir até a TAG da aula em questão. 
+
+![N|Solid](https://i.postimg.cc/3NpcS9WP/image.png)
