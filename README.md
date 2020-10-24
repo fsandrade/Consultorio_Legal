@@ -21,6 +21,7 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [13 - EF Core - Fluent API](https://youtu.be/bLGSPrCixvc) |
 | [14 - EF Core - Relacionamento Um para UM](https://youtu.be/gLICibYuo1U) |
 | [15 - EF Core - Relacionamento Um para Muitos](https://youtu.be/OZVtSO8k9sA) |
+| [16 - EF Core - Relacionamento Muitos para Muitos](https://youtu.be/tsPCUVoYe18) |
 
 
 ### Como visualizar o conteudo por aula

@@ -1,5 +1,5 @@
 ﻿using CL.Core.Domain;
-using CL.Core.Shared.ModelViews;
+using CL.Core.Shared.ModelViews.Cliente;
 using CL.Manager.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -91,7 +91,7 @@ namespace CL.WebApi.Controllers
         /// <param name="id" example="123">Id do cliente</param>
         /// <remarks>Ao excluir um cliente o mesmo será removido permanentemente da base.</remarks>
         [HttpDelete("{id}")]
-        [ProducesResponseType(typeof(Cliente), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Delete(int id)

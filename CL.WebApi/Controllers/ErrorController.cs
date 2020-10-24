@@ -1,4 +1,4 @@
-﻿using CL.Core.Shared.ModelViews;
+﻿using CL.Core.Shared.ModelViews.Erro;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

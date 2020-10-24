@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CL.Core.Shared.ModelViews.Endereco;
+using CL.Core.Shared.ModelViews.Telefone;
+using System;
 using System.Collections.Generic;
 
-namespace CL.Core.Shared.ModelViews
+namespace CL.Core.Shared.ModelViews.Cliente
 {
     /// <summary>
     /// Objeto utilizado para inserção de um novo cliente.

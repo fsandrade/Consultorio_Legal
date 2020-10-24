@@ -1,4 +1,4 @@
-﻿using CL.Core.Shared.ModelViews;
+﻿using CL.Core.Shared.ModelViews.Telefone;
 using FluentValidation;
 
 namespace CL.Manager.Validator

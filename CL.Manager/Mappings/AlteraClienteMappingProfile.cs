@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CL.Core.Domain;
-using CL.Core.Shared.ModelViews;
+using CL.Core.Shared.ModelViews.Cliente;
 using System;
 
 namespace CL.Manager.Mappings

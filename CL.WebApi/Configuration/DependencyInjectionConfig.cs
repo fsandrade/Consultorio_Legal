@@ -11,6 +11,8 @@ namespace CL.WebApi.Configuration
         {
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IClienteManager, ClienteManager>();
+            services.AddScoped<IMedicoRepository, MedicoRepository>();
+            services.AddScoped<IMedicoManager, MedicoManager>();
         }
     }
 }

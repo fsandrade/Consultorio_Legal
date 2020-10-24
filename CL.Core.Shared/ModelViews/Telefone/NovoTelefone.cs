@@ -1,4 +1,4 @@
-﻿namespace CL.Core.Shared.ModelViews
+﻿namespace CL.Core.Shared.ModelViews.Telefone
 {
     public class NovoTelefone
     {

@@ -18,6 +18,7 @@ namespace CL.WebApi.Configuration
                    p.RegisterValidatorsFromAssemblyContaining<NovoEnderecoValidator>();
                    p.RegisterValidatorsFromAssemblyContaining<AlteraClienteValidator>();
                    p.RegisterValidatorsFromAssemblyContaining<NovoTelefoneValidator>();
+                   p.RegisterValidatorsFromAssemblyContaining<NovoMedicoValidator>();
                    p.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
                });
         }

@@ -1,4 +1,4 @@
-﻿namespace CL.Core.Shared.ModelViews
+﻿namespace CL.Core.Shared.ModelViews.Cliente
 {
     public class AlteraCliente : NovoCliente
     {

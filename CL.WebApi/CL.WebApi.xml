@@ -15,13 +15,13 @@
             </summary>
             <param name="id" example="123">Id do cliente.</param>
         </member>
-        <member name="M:CL.WebApi.Controllers.ClientesController.Post(CL.Core.Shared.ModelViews.NovoCliente)">
+        <member name="M:CL.WebApi.Controllers.ClientesController.Post(CL.Core.Shared.ModelViews.Cliente.NovoCliente)">
             <summary>
             Insere um novo cliente
             </summary>
             <param name="novoCliente"></param>
         </member>
-        <member name="M:CL.WebApi.Controllers.ClientesController.Put(CL.Core.Shared.ModelViews.AlteraCliente)">
+        <member name="M:CL.WebApi.Controllers.ClientesController.Put(CL.Core.Shared.ModelViews.Cliente.AlteraCliente)">
             <summary>
             Altera um cliente.
             </summary>
@@ -33,6 +33,34 @@
             </summary>
             <param name="id" example="123">Id do cliente</param>
             <remarks>Ao excluir um cliente o mesmo será removido permanentemente da base.</remarks>
+        </member>
+        <member name="M:CL.WebApi.Controllers.MedicosController.Get">
+            <summary>
+            Retorna todos os médicos.
+            </summary>
+        </member>
+        <member name="M:CL.WebApi.Controllers.MedicosController.Get(System.Int32)">
+            <summary>
+            Retorna um médico consultado via ID
+            </summary>
+            <param name="id" example="123">Id do médico</param>
+        </member>
+        <member name="M:CL.WebApi.Controllers.MedicosController.Post(CL.Core.Shared.ModelViews.Medico.NovoMedico)">
+            <summary>
+            Insere um novo médico.
+            </summary>
+            <param name="medico"></param>
+        </member>
+        <member name="M:CL.WebApi.Controllers.MedicosController.Put(CL.Core.Shared.ModelViews.Medico.AlteraMedico)">
+            <summary>
+            Altera um médico
+            </summary>
+        </member>
+        <member name="M:CL.WebApi.Controllers.MedicosController.DeleteAsync(System.Int32)">
+            <summary>
+            Exclui um médico.
+            </summary>
+            <param name="id" example="123">Id do médico</param>
         </member>
     </members>
 </doc>
