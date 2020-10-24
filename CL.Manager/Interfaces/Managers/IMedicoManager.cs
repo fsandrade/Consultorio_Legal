@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CL.Manager.Interfaces
+namespace CL.Manager.Interfaces.Managers
 {
     public interface IMedicoManager
     {

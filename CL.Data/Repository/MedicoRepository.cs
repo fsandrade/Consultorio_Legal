@@ -1,6 +1,6 @@
 ﻿using CL.Core.Domain;
 using CL.Data.Context;
-using CL.Manager.Interfaces;
+using CL.Manager.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

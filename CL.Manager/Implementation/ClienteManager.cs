@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using CL.Core.Domain;
 using CL.Core.Shared.ModelViews.Cliente;
-using CL.Manager.Interfaces;
+using CL.Manager.Interfaces.Managers;
+using CL.Manager.Interfaces.Repositories;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;

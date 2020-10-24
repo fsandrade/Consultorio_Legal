@@ -1,6 +1,7 @@
 ﻿using CL.Data.Repository;
 using CL.Manager.Implementation;
-using CL.Manager.Interfaces;
+using CL.Manager.Interfaces.Managers;
+using CL.Manager.Interfaces.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CL.WebApi.Configuration
@@ -13,6 +14,7 @@ namespace CL.WebApi.Configuration
             services.AddScoped<IClienteManager, ClienteManager>();
             services.AddScoped<IMedicoRepository, MedicoRepository>();
             services.AddScoped<IMedicoManager, MedicoManager>();
+            services.AddScoped<IEspecialidadeRepository, EspecialidadeRepository>();
         }
     }
 }

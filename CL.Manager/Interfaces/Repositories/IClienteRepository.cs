@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CL.Manager.Interfaces
+namespace CL.Manager.Interfaces.Repositories
 {
     public interface IClienteRepository
     {
