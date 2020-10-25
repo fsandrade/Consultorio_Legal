@@ -23,7 +23,7 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [15 - EF Core - Relacionamento Um para Muitos](https://youtu.be/OZVtSO8k9sA) |
 | [16 - EF Core - Relacionamento Muitos para Muitos](https://youtu.be/tsPCUVoYe18) |
 | [17 - Validação personalizada](https://youtu.be/V09FM3IXEb0) |
-| [18 - Validação personalizada](https://youtu.be/NIok0HHkS1A) |
+| [18 - Enum](https://youtu.be/NIok0HHkS1A) |
 
 
 
