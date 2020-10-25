@@ -36,9 +36,6 @@
         <member name="P:CL.Core.Shared.ModelViews.Endereco.NovoEndereco.CEP">
             <example>49000000</example>
         </member>
-        <member name="P:CL.Core.Shared.ModelViews.Endereco.NovoEndereco.Estado">
-            <example>SE</example>
-        </member>
         <member name="P:CL.Core.Shared.ModelViews.Endereco.NovoEndereco.Cidade">
             <example>Aracaju</example>
         </member>

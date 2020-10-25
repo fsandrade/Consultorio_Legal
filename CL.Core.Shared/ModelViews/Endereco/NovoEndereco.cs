@@ -5,8 +5,7 @@
         ///<example>49000000</example>
         public int CEP { get; set; }
 
-        ///<example>SE</example>
-        public string Estado { get; set; }
+        public EstadoView Estado { get; set; }
 
         ///<example>Aracaju</example>
         public string Cidade { get; set; }
