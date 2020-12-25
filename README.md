@@ -24,7 +24,7 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [16 - EF Core - Relacionamento Muitos para Muitos](https://youtu.be/tsPCUVoYe18) |
 | [17 - Validação personalizada](https://youtu.be/V09FM3IXEb0) |
 | [18 - Enum](https://youtu.be/NIok0HHkS1A) |
-| [18 - Testes unitários controller - XUnit, FluenteAssertions, NSubstitute, Bogus](https://youtu.be/J8p_N6mK44I) |
+| [19 - Testes unitários controller - XUnit, FluenteAssertions, NSubstitute, Bogus](https://youtu.be/J8p_N6mK44I) |
 
 
 
