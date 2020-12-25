@@ -17,6 +17,9 @@ namespace CL.Manager.Mappings
 
             CreateMap<NovoEndereco, Endereco>();
             CreateMap<NovoTelefone, Telefone>();
+            CreateMap<Cliente, ClienteView>();
+            CreateMap<Endereco, EnderecoView>();
+            CreateMap<Telefone, TelefoneView>();
         }
     }
 }

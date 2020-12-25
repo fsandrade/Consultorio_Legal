@@ -41,21 +41,40 @@ namespace CL.Data.Repository
 
         public async Task<Cliente> UpdateClienteAsync(Cliente cliente)
         {
-            var clienteConsultado = await context.Clientes.FindAsync(cliente.Id);
+            var clienteConsultado = await context.Clientes
+                                                 .Include(p => p.Endereco)
+                                                 .Include(p => p.Telefones)
+                                                 .FirstOrDefaultAsync(p => p.Id == cliente.Id);
             if (clienteConsultado == null)
             {
                 return null;
             }
             context.Entry(clienteConsultado).CurrentValues.SetValues(cliente);
+            clienteConsultado.Endereco = cliente.Endereco;
+            UpdateClienteTelefones(cliente, clienteConsultado);
             await context.SaveChangesAsync();
             return clienteConsultado;
         }
 
-        public async Task DeleteClienteAsync(int id)
+        private void UpdateClienteTelefones(Cliente cliente, Cliente clienteConsultado)
+        {
+            clienteConsultado.Telefones.Clear();
+            foreach (var telefone in cliente.Telefones)
+            {
+                clienteConsultado.Telefones.Add(telefone);
+            }
+        }
+
+        public async Task<Cliente> DeleteClienteAsync(int id)
         {
             var clienteConsultado = await context.Clientes.FindAsync(id);
-            context.Clientes.Remove(clienteConsultado);
+            if (clienteConsultado == null)
+            {
+                return null;
+            }
+            var clienteRemovido = context.Clientes.Remove(clienteConsultado);
             await context.SaveChangesAsync();
+            return clienteRemovido.Entity;
         }
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SerilogTimings;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CL.WebApi.Controllers
@@ -26,11 +27,17 @@ namespace CL.WebApi.Controllers
         /// Retorna todos clientes cadastrados na base.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(typeof(Cliente), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ClienteView), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get()
         {
-            return Ok(await clienteManager.GetClientesAsync());
+            var clientes = await clienteManager.GetClientesAsync();
+            if (clientes.Any())
+            {
+                return Ok(clientes);
+            }
+            return NotFound();
         }
 
         /// <summary>
@@ -38,12 +45,17 @@ namespace CL.WebApi.Controllers
         /// </summary>
         /// <param name="id" example="123">Id do cliente.</param>
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(Cliente), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ClienteView), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await clienteManager.GetClienteAsync(id));
+            var cliente = await clienteManager.GetClienteAsync(id);
+            if (cliente.Id == 0)
+            {
+                return NotFound();
+            }
+            return Ok(cliente);
         }
 
         /// <summary>
@@ -51,20 +63,20 @@ namespace CL.WebApi.Controllers
         /// </summary>
         /// <param name="novoCliente"></param>
         [HttpPost]
-        [ProducesResponseType(typeof(Cliente), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ClienteView), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Post(NovoCliente novoCliente)
         {
             logger.LogInformation("Objeto recebido {@novoCliente}", novoCliente);
 
-            Cliente clienteInserido;
+            ClienteView clienteInserido;
             using (Operation.Time("Tempo de adição de um novo cliente."))
             {
                 logger.LogInformation("Foi requisitada a inserção de um novo cliente.");
                 clienteInserido = await clienteManager.InsertClienteAsync(novoCliente);
             }
             return CreatedAtAction(nameof(Get), new { id = clienteInserido.Id }, clienteInserido);
-            logger.LogInformation("Fim da requisição.");
         }
 
         /// <summary>
@@ -72,7 +84,7 @@ namespace CL.WebApi.Controllers
         /// </summary>
         /// <param name="alteraCliente"></param>
         [HttpPut]
-        [ProducesResponseType(typeof(Cliente), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ClienteView), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Put(AlteraCliente alteraCliente)
@@ -96,7 +108,11 @@ namespace CL.WebApi.Controllers
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Delete(int id)
         {
-            await clienteManager.DeleteClienteAsync(id);
+            var clienteExcliudo = await clienteManager.DeleteClienteAsync(id);
+            if (clienteExcliudo == null)
+            {
+                return NotFound();
+            }
             return NoContent();
         }
     }

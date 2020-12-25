@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="32.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CL.Core.Shared\CL.Core.Shared.csproj" />
+    <ProjectReference Include="..\CL.Core\CL.Core.csproj" />
+  </ItemGroup>
+
+</Project>
