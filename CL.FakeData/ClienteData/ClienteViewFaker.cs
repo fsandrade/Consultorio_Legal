@@ -17,6 +17,7 @@ namespace CL.FakeData.ClienteData
             RuleFor(p => p.Documento, f => f.Person.Cpf());
             RuleFor(p => p.Criacao, f => f.Date.Past());
             RuleFor(p => p.UltimaAtualizacao, f => f.Date.Past());
+            RuleFor(p => p.DataNascimento, f => f.Date.Past());
             RuleFor(p => p.Telefones, f => new TelefoneViewFaker().Generate(3));
             RuleFor(p => p.Endereco, f => new EnderecoViewFaker().Generate());
         }

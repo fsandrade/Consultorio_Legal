@@ -25,6 +25,7 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [17 - Validação personalizada](https://youtu.be/V09FM3IXEb0) |
 | [18 - Enum](https://youtu.be/NIok0HHkS1A) |
 | [19 - Testes unitários controller - XUnit, FluenteAssertions, NSubstitute, Bogus](https://youtu.be/J8p_N6mK44I) |
+| [20 - Testes unitários controller parte 2 - XUnit, FluenteAssertions, NSubstitute, Bogus](https://youtu.be/Lyx8wfy7WCE) |
 
 
 
