@@ -27,6 +27,7 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [19 - Testes unitários controller - XUnit, FluenteAssertions, NSubstitute, Bogus](https://youtu.be/J8p_N6mK44I) |
 | [20 - Testes unitários controller parte 2 - XUnit, FluenteAssertions, NSubstitute, Bogus](https://youtu.be/Lyx8wfy7WCE) |
 | [21 - Testes unitários repositório parte 3 - InMemoryDatabase](https://youtu.be/4klu6OWAW-A) |
+| [22 - Armazenando senhas de forma segura com AspNetCore Identity](https://youtu.be/C9bMtak-_Is) |
 
 
 ### Como visualizar o conteudo por aula

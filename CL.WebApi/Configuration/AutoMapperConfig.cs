@@ -8,7 +8,11 @@ namespace CL.WebApi.Configuration
     {
         public static void AddAutoMapperConfiguration(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(NovoClienteMappingProfile), typeof(AlteraClienteMappingProfile), typeof(NovoMedicoMappingProfile));
+            services.AddAutoMapper(
+                typeof(NovoClienteMappingProfile),
+                typeof(AlteraClienteMappingProfile),
+                typeof(NovoMedicoMappingProfile),
+                typeof(UsuarioMappingProfile));
         }
     }
 }
