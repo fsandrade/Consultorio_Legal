@@ -35,19 +35,21 @@ namespace CL.Data.Repository
 
         public async Task<Medico> InsertMedicoAsync(Medico medico)
         {
-            await context.Medicos.AddAsync(medico);
             await InsertMedicoEspecilidades(medico);
+            await context.Medicos.AddAsync(medico);
             await context.SaveChangesAsync();
             return medico;
         }
 
         private async Task InsertMedicoEspecilidades(Medico medico)
         {
+            var especialidadesConsultadas = new List<Especialidade>();
             foreach (var especialidade in medico.Especialidades)
             {
-                var especialidadeConsultada = await context.Especialidades.AsNoTracking().FirstAsync(p => p.Id == especialidade.Id);
-                context.Entry(especialidade).CurrentValues.SetValues(especialidadeConsultada);
+                var especialidadeConsultada = await context.Especialidades.FindAsync(especialidade.Id);
+                especialidadesConsultadas.Add(especialidadeConsultada);
             }
+            medico.Especialidades = especialidadesConsultadas;
         }
 
         public async Task<Medico> UpdateMedicoAsync(Medico medico)
@@ -75,11 +77,16 @@ namespace CL.Data.Repository
             }
         }
 
-        public async Task DeleteMedicoAsync(int id)
+        public async Task<Medico> DeleteMedicoAsync(int id)
         {
             var medicoConsultado = await context.Medicos.FindAsync(id);
-            context.Medicos.Remove(medicoConsultado);
+            if (medicoConsultado == null)
+            {
+                return null;
+            }
+            var medicoRemovido = context.Medicos.Remove(medicoConsultado);
             await context.SaveChangesAsync();
+            return medicoRemovido.Entity;
         }
     }
 }

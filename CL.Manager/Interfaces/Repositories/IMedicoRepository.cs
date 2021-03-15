@@ -17,6 +17,6 @@ namespace CL.Manager.Interfaces.Repositories
 
         Task<Medico> UpdateMedicoAsync(Medico medico);
 
-        Task DeleteMedicoAsync(int id);
+        Task<Medico> DeleteMedicoAsync(int id);
     }
 }

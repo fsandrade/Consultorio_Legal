@@ -1,5 +1,6 @@
 ﻿using CL.Data.Context;
 using CL.Manager.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace CL.Data.Repository
@@ -15,7 +16,7 @@ namespace CL.Data.Repository
 
         public async Task<bool> ExisteAsync(int id)
         {
-            return await context.Especialidades.FindAsync(id) != null;
+            return await context.Especialidades.AnyAsync(p => p.Id == id);
         }
     }
 }

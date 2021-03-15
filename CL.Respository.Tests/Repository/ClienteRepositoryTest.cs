@@ -24,7 +24,7 @@ namespace CL.Respository.Tests.Repository
         public ClienteRepositoryTest()
         {
             var optionsBuilder = new DbContextOptionsBuilder<ClContext>();
-            optionsBuilder.UseInMemoryDatabase("Db_Teste");
+            optionsBuilder.UseInMemoryDatabase(Guid.NewGuid().ToString());
 
             context = new ClContext(optionsBuilder.Options);
             repository = new ClienteRepository(context);
