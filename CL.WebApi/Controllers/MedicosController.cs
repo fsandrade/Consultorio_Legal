@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CL.Core.Shared.ModelViews.Erro;
+﻿using CL.Core.Shared.ModelViews.Erro;
 using CL.Core.Shared.ModelViews.Medico;
 using CL.Manager.Interfaces.Managers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CL.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MedicosController : ControllerBase
     {
         private readonly IMedicoManager manager;

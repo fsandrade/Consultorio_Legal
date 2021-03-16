@@ -2,10 +2,7 @@
 using CL.Data.Context;
 using CL.Manager.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace CL.Data.Repository
@@ -26,15 +23,29 @@ namespace CL.Data.Repository
 
         public async Task<Usuario> GetAsync(string login)
         {
-            return await context.Usuarios.AsNoTracking()
+            return await context.Usuarios
+                .Include(p => p.Funcoes)
+                .AsNoTracking()
                 .SingleOrDefaultAsync(p => p.Login == login);
         }
 
         public async Task<Usuario> InsertAsync(Usuario usuario)
         {
+            await InsertUsuarioFuncaoAsync(usuario);
             await context.Usuarios.AddAsync(usuario);
             await context.SaveChangesAsync();
             return usuario;
+        }
+
+        private async Task InsertUsuarioFuncaoAsync(Usuario usuario)
+        {
+            var funcoesConsultas = new List<Funcao>();
+            foreach (var funcao in usuario.Funcoes)
+            {
+                var funcaoConsultada = await context.Funcoes.FindAsync(funcao.Id);
+                funcoesConsultas.Add(funcaoConsultada);
+            }
+            usuario.Funcoes = funcoesConsultas;
         }
 
         public async Task<Usuario> UpdateAsync(Usuario usuario)

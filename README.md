@@ -28,6 +28,8 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [20 - Testes unitários controller parte 2 - XUnit, FluenteAssertions, NSubstitute, Bogus](https://youtu.be/Lyx8wfy7WCE) |
 | [21 - Testes unitários repositório parte 3 - InMemoryDatabase](https://youtu.be/4klu6OWAW-A) |
 | [22 - Armazenando senhas de forma segura com AspNetCore Identity](https://youtu.be/C9bMtak-_Is) |
+| [23 - Autenticação e autorização com JWT](https://youtu.be/SN1FiCkvbYo) |
+
 
 
 ### Como visualizar o conteudo por aula
