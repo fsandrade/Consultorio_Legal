@@ -19,7 +19,7 @@ namespace CL.Respository.Tests.Repository
         private readonly IMedicoRepository repository;
         private readonly ClContext context;
         private readonly Medico medico;
-        private MedicoFaker medicoFaker;
+        private readonly MedicoFaker medicoFaker;
 
         public MedicoRepositoryTest()
         {
@@ -43,8 +43,8 @@ namespace CL.Respository.Tests.Repository
                 med.Id = 0;
                 var random = new Random();
                 var listEsp = new List<Especialidade> {
-                    especialidades.ElementAt(random.Next(especialidades.Count())),
-                    especialidades.ElementAt(random.Next(especialidades.Count()))
+                    especialidades.ElementAt(random.Next(especialidades.Count)),
+                    especialidades.ElementAt(random.Next(especialidades.Count))
                 };
                 med.Especialidades = listEsp;
                 await context.Medicos.AddAsync(med);
@@ -106,8 +106,8 @@ namespace CL.Respository.Tests.Repository
             var especialidades = await InsereEspecialidades();
             var random = new Random();
             var listEsp = new List<Especialidade> {
-                    especialidades.ElementAt(random.Next(especialidades.Count())),
-                    especialidades.ElementAt(random.Next(especialidades.Count()))
+                    especialidades.ElementAt(random.Next(especialidades.Count)),
+                    especialidades.ElementAt(random.Next(especialidades.Count))
                 };
             medico.Especialidades = listEsp;
             var retorno = await repository.InsertMedicoAsync(medico);
@@ -140,7 +140,7 @@ namespace CL.Respository.Tests.Repository
             medicoAlterado.Especialidades.Add(especialidade);
             var retorno = await repository.UpdateMedicoAsync(medicoAlterado);
 
-            retorno.Especialidades.Should().HaveCount(medicoAlterado.Especialidades.Count());
+            retorno.Especialidades.Should().HaveCount(medicoAlterado.Especialidades.Count);
         }
 
         [Fact]
@@ -150,7 +150,7 @@ namespace CL.Respository.Tests.Repository
             var medicoAlterado = await context.Medicos.Include(p => p.Especialidades).AsNoTracking().FirstAsync();
             medicoAlterado.Especialidades.Remove(medicoAlterado.Especialidades.First());
             var retorno = await repository.UpdateMedicoAsync(medicoAlterado);
-            retorno.Especialidades.Should().HaveCount(medicoAlterado.Especialidades.Count());
+            retorno.Especialidades.Should().HaveCount(medicoAlterado.Especialidades.Count);
             retorno.Especialidades.First().Id.Should().Be(medicoAlterado.Especialidades.First().Id);
         }
 

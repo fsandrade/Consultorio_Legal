@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using CL.Manager.Mappings;
+﻿using CL.Manager.Mappings;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CL.WebApi.Configuration

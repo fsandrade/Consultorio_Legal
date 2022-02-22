@@ -42,7 +42,7 @@ namespace CL.WebApi.Controllers
         [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await manager.GetMedicoAsync(id)); ;
+            return Ok(await manager.GetMedicoAsync(id));
         }
 
         /// <summary>

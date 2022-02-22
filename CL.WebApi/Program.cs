@@ -7,7 +7,7 @@ using System.IO;
 
 namespace CL.WebApi
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
@@ -22,7 +22,7 @@ namespace CL.WebApi
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "Erro catastrofico.");
+                Log.Fatal(ex, "Erro catastrófico.");
                 throw;
             }
             finally
@@ -53,9 +53,6 @@ namespace CL.WebApi
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .UseSerilog()
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
     }
 }

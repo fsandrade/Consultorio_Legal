@@ -7,7 +7,7 @@ namespace CL.FakeData.TelefoneData
     {
         public TelefoneFaker(int clientId)
         {
-            RuleFor(o => o.ClienteId, f => clientId);
+            RuleFor(o => o.ClienteId, _ => clientId);
             RuleFor(o => o.Numero, f => f.Person.Phone);
         }
     }

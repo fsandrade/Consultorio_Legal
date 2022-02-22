@@ -1,5 +1,4 @@
-﻿using CL.Core.Domain;
-using CL.Core.Shared.ModelViews.Cliente;
+﻿using CL.Core.Shared.ModelViews.Cliente;
 using CL.Manager.Interfaces.Managers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

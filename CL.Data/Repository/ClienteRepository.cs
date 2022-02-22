@@ -56,7 +56,7 @@ namespace CL.Data.Repository
             return clienteConsultado;
         }
 
-        private void UpdateClienteTelefones(Cliente cliente, Cliente clienteConsultado)
+        private static void UpdateClienteTelefones(Cliente cliente, Cliente clienteConsultado)
         {
             clienteConsultado.Telefones.Clear();
             foreach (var telefone in cliente.Telefones)

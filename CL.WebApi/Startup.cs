@@ -52,10 +52,7 @@ namespace CL.WebApi
 
             app.UseJwtConfiguration();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

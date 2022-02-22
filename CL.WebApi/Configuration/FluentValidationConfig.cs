@@ -19,10 +19,7 @@ namespace CL.WebApi.Configuration
                     x.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                     x.SerializerSettings.Converters.Add(new StringEnumConverter());
                 })
-                .AddJsonOptions(p =>
-                {
-                    p.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-                })
+                .AddJsonOptions(p => p.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()))
                 .AddFluentValidation(p =>
                {
                    p.RegisterValidatorsFromAssemblyContaining<NovoClienteValidator>();

@@ -2,7 +2,7 @@
 
 namespace CL.Manager.Interfaces.Services
 {
-    public interface IJWTService
+    public interface IJwtService
     {
         string GerarToken(Usuario usuario);
     }

@@ -14,8 +14,8 @@ namespace CL.FakeData.ClienteData
             RuleFor(p => p.Sexo, f => f.PickRandom<SexoView>());
             RuleFor(p => p.Documento, f => f.Person.Cpf());
             RuleFor(p => p.DataNascimento, f => f.Date.Past());
-            RuleFor(p => p.Telefones, f => new NovoTelefoneFaker().Generate(3));
-            RuleFor(p => p.Endereco, f => new NovoEnderecoFaker().Generate());
+            RuleFor(p => p.Telefones, _ => new NovoTelefoneFaker().Generate(3));
+            RuleFor(p => p.Endereco, _ => new NovoEnderecoFaker().Generate());
         }
     }
 }

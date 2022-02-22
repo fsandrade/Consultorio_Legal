@@ -19,7 +19,7 @@ namespace CL.Respository.Tests.Repository
         private readonly IClienteRepository repository;
         private readonly ClContext context;
         private readonly Cliente cliente;
-        private ClienteFaker clienteFaker;
+        private readonly ClienteFaker clienteFaker;
 
         public ClienteRepositoryTest()
         {

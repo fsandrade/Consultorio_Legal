@@ -11,11 +11,11 @@ using System.Text;
 
 namespace CL.Data.Services
 {
-    public class JWTService : IJWTService
+    public class JwtService : IJwtService
     {
         private readonly IConfiguration configuration;
 
-        public JWTService(IConfiguration configuration)
+        public JwtService(IConfiguration configuration)
         {
             this.configuration = configuration;
         }

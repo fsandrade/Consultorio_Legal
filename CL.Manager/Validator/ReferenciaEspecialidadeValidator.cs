@@ -13,10 +13,7 @@ namespace CL.Manager.Validator
         {
             this.repository = repository;
             RuleFor(p => p.Id).NotEmpty().NotNull().GreaterThan(0)
-                .MustAsync(async (id, cancelar) =>
-                {
-                    return await ExisteNaBase(id);
-                }).WithMessage("Especialidade não cadastrada");
+                .MustAsync(async (id, _) => await ExisteNaBase(id)).WithMessage("Especialidade não cadastrada");
         }
 
         private async Task<bool> ExisteNaBase(int id)

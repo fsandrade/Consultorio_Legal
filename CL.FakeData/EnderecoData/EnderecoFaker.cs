@@ -8,7 +8,7 @@ namespace CL.FakeData.EnderecoData
     {
         public EnderecoFaker(int clientId)
         {
-            RuleFor(o => o.ClienteId, f => clientId);
+            RuleFor(o => o.ClienteId, _ => clientId);
             RuleFor(o => o.Numero, f => f.Address.BuildingNumber());
             RuleFor(o => o.CEP, f => Convert.ToInt32(f.Address.ZipCode().Replace("-", "")));
             RuleFor(o => o.Cidade, f => f.Address.City());

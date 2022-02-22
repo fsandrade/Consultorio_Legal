@@ -15,9 +15,9 @@ namespace CL.Manager.Implementation
     {
         private readonly IUsuarioRepository repository;
         private readonly IMapper mapper;
-        private readonly IJWTService jwt;
+        private readonly IJwtService jwt;
 
-        public UsuarioManager(IUsuarioRepository repository, IMapper mapper, IJWTService jwt)
+        public UsuarioManager(IUsuarioRepository repository, IMapper mapper, IJwtService jwt)
         {
             this.repository = repository;
             this.mapper = mapper;
@@ -41,7 +41,7 @@ namespace CL.Manager.Implementation
             return mapper.Map<UsuarioView>(await repository.InsertAsync(usuario));
         }
 
-        private void ConverteSenhaEmHash(Usuario usuario)
+        private static void ConverteSenhaEmHash(Usuario usuario)
         {
             var passwordHasher = new PasswordHasher<Usuario>();
             usuario.Senha = passwordHasher.HashPassword(usuario, usuario.Senha);

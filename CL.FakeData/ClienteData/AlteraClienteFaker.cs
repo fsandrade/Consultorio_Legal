@@ -10,11 +10,11 @@ namespace CL.FakeData.ClienteData
         public AlteraClienteFaker()
         {
             var id = new Faker().Random.Number(1, 100);
-            RuleFor(o => o.Id, f => id);
+            RuleFor(o => o.Id, _ => id);
             RuleFor(o => o.Nome, f => f.Person.FullName);
             RuleFor(o => o.Sexo, f => f.PickRandom<SexoView>());
-            RuleFor(o => o.Telefones, f => new NovoTelefoneFaker().Generate(3));
-            RuleFor(o => o.Endereco, f => new NovoEnderecoFaker().Generate());
+            RuleFor(o => o.Telefones, _ => new NovoTelefoneFaker().Generate(3));
+            RuleFor(o => o.Endereco, _ => new NovoEnderecoFaker().Generate());
         }
     }
 }

@@ -13,7 +13,7 @@ namespace CL.WebApi.Configuration
     {
         public static void AddJwtTConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<IJWTService, JWTService>();
+            services.AddSingleton<IJwtService, JwtService>();
 
             var chave = Encoding.ASCII.GetBytes(configuration.GetSection("JWT:Secret").Value);
 

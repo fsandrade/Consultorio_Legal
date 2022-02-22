@@ -2,9 +2,7 @@
 using CL.Data.Context;
 using CL.Manager.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace CL.Data.Repository
