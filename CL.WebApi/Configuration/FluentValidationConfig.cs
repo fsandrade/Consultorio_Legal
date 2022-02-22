@@ -1,5 +1,6 @@
 ﻿using CL.Manager.Validator;
 using FluentValidation.AspNetCore;
+using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -32,6 +33,8 @@ namespace CL.WebApi.Configuration
                    p.RegisterValidatorsFromAssemblyContaining<AlteraMedicoValidator>();
                    p.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
                });
+
+            services.AddFluentValidationRulesToSwagger();
         }
     }
 }
