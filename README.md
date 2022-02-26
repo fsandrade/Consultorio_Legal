@@ -29,6 +29,7 @@ Este aplicativo é desenvolvido como exemplo de uma aplicação corporativa e é
 | [21 - Testes unitários repositório parte 3 - InMemoryDatabase](https://youtu.be/4klu6OWAW-A) |
 | [22 - Armazenando senhas de forma segura com AspNetCore Identity](https://youtu.be/C9bMtak-_Is) |
 | [23 - Autenticação e autorização com JWT](https://youtu.be/SN1FiCkvbYo) |
+| [24 - Migrando o DotNet do 3.1 para 6.0](https://youtu.be/ROVOy3lUMrU) |
 
 
 
