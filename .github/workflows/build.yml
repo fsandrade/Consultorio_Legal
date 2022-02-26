@@ -43,7 +43,7 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"fsandrade_Consultorio_Legal" /o:"fsandrade" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io /d:sonar.cs.vscoveragexml.reportsPaths="C:\TestResults\DotnetCoverage.coveragexml"
-          dotnet build -c release                 
+          dotnet build -c release
           dotnet test --collect "Code Coverage" --results-directory "C:\TestResults"
           CodeCoverage.exe analyze /output:"C:\TestResults\DotnetCoverage.coveragexml" "C:\TestResults\c887677b-b89e-4222-93e4-09e563b48b7a\randomGeneratedFileName.coverage"          
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
