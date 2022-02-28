@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -25,5 +26,15 @@
     <ProjectReference Include="..\CL.Data\CL.Data.csproj" />
     <ProjectReference Include="..\CL.FakeData\CL.FakeData.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit"/>
+		<Using Include="FluentAssertions"/>
+		<Using Include="CL.Core.Domain"/>
+		<Using Include="CL.Data.Context"/>
+		<Using Include="CL.Data.Repository"/>
+		<Using Include="CL.Manager.Interfaces.Repositories"/>
+		<Using Include="Microsoft.EntityFrameworkCore"/>
+	</ItemGroup>
 
 </Project>

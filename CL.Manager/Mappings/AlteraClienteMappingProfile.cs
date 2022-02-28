@@ -1,17 +1,13 @@
-﻿using AutoMapper;
-using CL.Core.Domain;
-using CL.Core.Shared.ModelViews.Cliente;
-using System;
+﻿using CL.Core.Shared.ModelViews.Cliente;
 
-namespace CL.Manager.Mappings
+namespace CL.Manager.Mappings;
+
+public class AlteraClienteMappingProfile : Profile
 {
-    public class AlteraClienteMappingProfile : Profile
+    public AlteraClienteMappingProfile()
     {
-        public AlteraClienteMappingProfile()
-        {
-            CreateMap<AlteraCliente, Cliente>()
-               .ForMember(d => d.UltimaAtualizacao, o => o.MapFrom(_ => DateTime.Now))
-               .ForMember(d => d.DataNascimento, o => o.MapFrom(x => x.DataNascimento.Date));
-        }
+        CreateMap<AlteraCliente, Cliente>()
+           .ForMember(d => d.UltimaAtualizacao, o => o.MapFrom(_ => DateTime.Now))
+           .ForMember(d => d.DataNascimento, o => o.MapFrom(x => x.DataNascimento.Date));
     }
 }

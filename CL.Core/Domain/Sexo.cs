@@ -1,8 +1,7 @@
-﻿namespace CL.Core.Domain
+﻿namespace CL.Core.Domain;
+
+public enum Sexo
 {
-    public enum Sexo
-    {
-        M,
-        F
-    }
+    M,
+    F
 }

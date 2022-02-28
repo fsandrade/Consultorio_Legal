@@ -1,7 +1,6 @@
-﻿namespace CL.Core.Shared.ModelViews.Especialidade
+﻿namespace CL.Core.Shared.ModelViews.Especialidade;
+
+public class ReferenciaEspecialidade
 {
-    public class ReferenciaEspecialidade
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

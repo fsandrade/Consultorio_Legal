@@ -1,8 +1,7 @@
-﻿namespace CL.Core.Shared.ModelViews.Cliente
+﻿namespace CL.Core.Shared.ModelViews.Cliente;
+
+public enum SexoView
 {
-    public enum SexoView
-    {
-        M,
-        F
-    }
+    M,
+    F
 }
