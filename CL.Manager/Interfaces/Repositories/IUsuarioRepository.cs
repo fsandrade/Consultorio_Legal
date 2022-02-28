@@ -1,17 +1,12 @@
-﻿using CL.Core.Domain;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿namespace CL.Manager.Interfaces.Repositories;
 
-namespace CL.Manager.Interfaces.Repositories
+public interface IUsuarioRepository
 {
-    public interface IUsuarioRepository
-    {
-        Task<IEnumerable<Usuario>> GetAsync();
+    Task<IEnumerable<Usuario>> GetAsync();
 
-        Task<Usuario> GetAsync(string login);
+    Task<Usuario> GetAsync(string login);
 
-        Task<Usuario> InsertAsync(Usuario usuario);
+    Task<Usuario> InsertAsync(Usuario usuario);
 
-        Task<Usuario> UpdateAsync(Usuario usuario);
-    }
+    Task<Usuario> UpdateAsync(Usuario usuario);
 }

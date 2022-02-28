@@ -2,6 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -25,5 +26,14 @@
 	<ItemGroup>
 		<ProjectReference Include="..\CL.Core\CL.Core.csproj" />
 		<ProjectReference Include="..\CL.Manager\CL.Manager.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="CL.Core.Domain"/>
+		<Using Include="Microsoft.EntityFrameworkCore"/>
+		<Using Include="CL.Data.Context"/>
+		<Using Include="CL.Manager.Interfaces.Repositories"/>
+		<Using Include="Microsoft.Extensions.Logging"/>
+		<Using Include="CL.Manager.Interfaces.Services"/>
 	</ItemGroup>
 </Project>

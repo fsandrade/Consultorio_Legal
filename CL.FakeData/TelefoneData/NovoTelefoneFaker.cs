@@ -1,13 +1,11 @@
-﻿using Bogus;
-using CL.Core.Shared.ModelViews.Telefone;
+﻿using CL.Core.Shared.ModelViews.Telefone;
 
-namespace CL.FakeData.TelefoneData
+namespace CL.FakeData.TelefoneData;
+
+public class NovoTelefoneFaker : Faker<NovoTelefone>
 {
-    public class NovoTelefoneFaker : Faker<NovoTelefone>
+    public NovoTelefoneFaker()
     {
-        public NovoTelefoneFaker()
-        {
-            RuleFor(p => p.Numero, f => f.Person.Phone);
-        }
+        RuleFor(p => p.Numero, f => f.Person.Phone);
     }
 }

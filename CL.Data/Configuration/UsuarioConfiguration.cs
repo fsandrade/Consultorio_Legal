@@ -1,14 +1,11 @@
-﻿using CL.Core.Domain;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CL.Data.Configuration
+namespace CL.Data.Configuration;
+
+public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
 {
-    public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
+    public void Configure(EntityTypeBuilder<Usuario> builder)
     {
-        public void Configure(EntityTypeBuilder<Usuario> builder)
-        {
-            builder.HasKey(k => k.Login);
-        }
+        builder.HasKey(k => k.Login);
     }
 }
