@@ -1,7 +1,6 @@
-﻿namespace CL.Core.Shared.ModelViews.Medico
+﻿namespace CL.Core.Shared.ModelViews.Medico;
+
+public class AlteraMedico : NovoMedico
 {
-    public class AlteraMedico : NovoMedico
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

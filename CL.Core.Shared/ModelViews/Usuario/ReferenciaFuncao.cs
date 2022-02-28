@@ -1,7 +1,6 @@
-﻿namespace CL.Core.Shared.ModelViews.Usuario
+﻿namespace CL.Core.Shared.ModelViews.Usuario;
+
+public class ReferenciaFuncao
 {
-    public class ReferenciaFuncao
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

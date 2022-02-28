@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,5 +14,14 @@
     <ProjectReference Include="..\CL.Core.Shared\CL.Core.Shared.csproj" />
     <ProjectReference Include="..\CL.Core\CL.Core.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<Using Include="CL.Core.Domain"/>
+		<Using Include="AutoMapper"/>
+		<Using Include="CL.Manager.Interfaces.Managers"/>
+		<Using Include="CL.Manager.Interfaces.Repositories"/>
+		<Using Include="Microsoft.Extensions.Logging"/>
+		<Using Include="CL.Manager.Interfaces.Services"/>
+	</ItemGroup>
 
 </Project>

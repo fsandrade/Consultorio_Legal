@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -25,5 +26,19 @@
     <ProjectReference Include="..\CL.FakeData\CL.FakeData.csproj" />
     <ProjectReference Include="..\CL.Manager\CL.Manager.csproj" />
   </ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit" />
+		<Using Include="NSubstitute" />
+		<Using Include="FluentAssertions" />
+		<Using Include="AutoMapper" />
+		<Using Include="NSubstitute.ReturnsExtensions" />
+		<Using Include="Microsoft.Extensions.Logging" />
+		<Using Include="CL.Manager.Implementation" />
+		<Using Include="CL.Manager.Interfaces.Managers" />
+		<Using Include="CL.Manager.Interfaces.Repositories" />
+		<Using Include="CL.Manager.Mappings" />		
+		<Using Include="CL.Core.Domain" />		
+	</ItemGroup>
 
 </Project>

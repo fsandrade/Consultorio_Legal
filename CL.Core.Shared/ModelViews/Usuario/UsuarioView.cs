@@ -1,11 +1,8 @@
-﻿using System.Collections.Generic;
+﻿namespace CL.Core.Shared.ModelViews.Usuario;
 
-namespace CL.Core.Shared.ModelViews.Usuario
+public class UsuarioView
 {
-    public class UsuarioView
-    {
-        public string Login { get; set; }
+    public string Login { get; set; }
 
-        public ICollection<FuncaoView> Funcoes { get; set; }
-    }
+    public ICollection<FuncaoView> Funcoes { get; set; }
 }

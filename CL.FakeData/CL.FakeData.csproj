@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,4 +14,8 @@
     <ProjectReference Include="..\CL.Core\CL.Core.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Using Include="Bogus"/>
+		<Using Include="CL.Core.Domain"/>
+	</ItemGroup>
 </Project>
