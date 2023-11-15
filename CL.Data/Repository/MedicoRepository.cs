@@ -1,4 +1,6 @@
-﻿namespace CL.Data.Repository;
+﻿using CL.Core.Shared.Extensions;
+
+namespace CL.Data.Repository;
 
 public class MedicoRepository : IMedicoRepository
 {
@@ -60,12 +62,10 @@ public class MedicoRepository : IMedicoRepository
 
     private async Task UpdateMedicoEspecialidades(Medico medico, Medico medicoConsultado)
     {
-        medicoConsultado.Especialidades.Clear();
-        foreach (var especialidade in medico.Especialidades)
-        {
-            var especialidadeConsultada = await context.Especialidades.FindAsync(especialidade.Id);
-            medicoConsultado.Especialidades.Add(especialidadeConsultada);
-        }
+        medicoConsultado.Especialidades.RemoveAll(p => !medico.Especialidades.Contains(p));
+        var especialidadesAdicionadas = medico.Especialidades.Except(medicoConsultado.Especialidades).Select(p => p.Id);
+        var especialidadesConsultadas = await context.Especialidades.Where(p => especialidadesAdicionadas.Contains(p.Id)).ToListAsync();
+        medicoConsultado.Especialidades.AddRange(especialidadesConsultadas);
     }
 
     public async Task<Medico> DeleteMedicoAsync(int id)
