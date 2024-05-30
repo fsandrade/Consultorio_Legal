@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
 
@@ -17,10 +17,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.2" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.2" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -29,11 +30,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Using Include="CL.Core.Domain"/>
-		<Using Include="Microsoft.EntityFrameworkCore"/>
-		<Using Include="CL.Data.Context"/>
-		<Using Include="CL.Manager.Interfaces.Repositories"/>
-		<Using Include="Microsoft.Extensions.Logging"/>
-		<Using Include="CL.Manager.Interfaces.Services"/>
+		<Using Include="CL.Core.Domain" />
+		<Using Include="Microsoft.EntityFrameworkCore" />
+		<Using Include="CL.Data.Context" />
+		<Using Include="CL.Manager.Interfaces.Repositories" />
+		<Using Include="Microsoft.Extensions.Logging" />
+		<Using Include="CL.Manager.Interfaces.Services" />
 	</ItemGroup>
 </Project>

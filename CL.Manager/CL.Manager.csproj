@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="automapper" Version="11.0.1" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+    <PackageReference Include="automapper" Version="12.0.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,12 +16,12 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<Using Include="CL.Core.Domain"/>
-		<Using Include="AutoMapper"/>
-		<Using Include="CL.Manager.Interfaces.Managers"/>
-		<Using Include="CL.Manager.Interfaces.Repositories"/>
-		<Using Include="Microsoft.Extensions.Logging"/>
-		<Using Include="CL.Manager.Interfaces.Services"/>
+		<Using Include="CL.Core.Domain" />
+		<Using Include="AutoMapper" />
+		<Using Include="CL.Manager.Interfaces.Managers" />
+		<Using Include="CL.Manager.Interfaces.Repositories" />
+		<Using Include="Microsoft.Extensions.Logging" />
+		<Using Include="CL.Manager.Interfaces.Services" />
 	</ItemGroup>
 
 </Project>
